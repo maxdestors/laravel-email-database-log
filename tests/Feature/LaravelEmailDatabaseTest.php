@@ -63,7 +63,7 @@ class LaravelEmailDatabaseTest extends TestCase
     /** @test */
     public function cc_recipient_with_name_is_correctly_formatted()
     {
-        Mail::cc((object) ['email' => 'email@example.com', 'name' => 'John Do'])
+        Mail::cc((object) ['email' => 'email@example.com', 'name' => 'John Doe'])
             ->send(new TestMail());
 
         $this->assertDatabaseHas('email_log', [
@@ -77,7 +77,7 @@ class LaravelEmailDatabaseTest extends TestCase
     /** @test */
     public function bcc_recipient_with_name_is_correctly_formatted()
     {
-        Mail::bcc((object) ['email' => 'email@example.com', 'name' => 'John Do'])
+        Mail::bcc((object) ['email' => 'email@example.com', 'name' => 'John Doe'])
             ->send(new TestMail());
 
         $this->assertDatabaseHas('email_log', [
